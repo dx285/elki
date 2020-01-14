@@ -124,7 +124,7 @@ public class BIRCHWKMeans<M extends MeanModel> implements ClusteringAlgorithm<Cl
       leaves[z] = iter.get();
       for(int i = 0; i < dim; i++) {
         cMeans[z][i] = leaves[z].centroid(i);
-        cLinSum[z][i] = leaves[z].linearSum(i);
+        cLinSum[z][i] = leaves[z].ls[i];
       }
       cWeights[z] = (double)leaves[z].n;
       cSumSqu[z] = leaves[z].sumOfSumOfSquares();

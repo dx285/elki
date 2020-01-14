@@ -281,8 +281,13 @@ public class LloydWKMeans {
       ss += sumsqu[id];
       weight += weights[id];
     }
-    double lsn = Arrays.stream(timesEquals(ls,1./weight)).sum();
-    return ss/weight - lsn * lsn;
+    double lsSum = 0.;
+    for(int i = 0; i < dim; i++) {
+      lsSum += ls[i] * ls[i];
+    }
+    double result = ss * weight - lsSum;
+    return result/(weight * weight);
+
   }
   
   public static class Par implements Parameterizer {

@@ -104,16 +104,6 @@ public class ClusteringFeature {
   }
   
   /**
-   * Linear sum value in dimension i.
-   * 
-   * @param i Dimension
-   * @return linear sum
-   */
-  public double linearSum(int i) {
-    return ls[i];
-  }
-
-  /**
    * Sum over all dimensions of sums of squares.
    *
    * @return Sum of SS
